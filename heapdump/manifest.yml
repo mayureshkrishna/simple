@@ -1,0 +1,8 @@
+---
+applications:
+- name: simple
+  memory: 2048m
+  instances: 1
+  path: target/simple-0.0.1-SNAPSHOT.jar
+  env:
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom -XX:NativeMemoryTracking=summary -XX:+PrintHeapAtGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps
