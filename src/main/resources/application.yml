@@ -1,7 +1,17 @@
-security:
-  basic:
-    enabled: false
-
 management:
-  security:
-    enabled: false
+  cloudfoundry:
+    skip-ssl-validation: false
+    enabled: true
+    endpoint:
+    health:
+      enabled: true
+      show-details: always
+    metrics:
+      enabled: true
+  endpoints:
+    jmx:
+      exposure:
+       include: '*'
+    web:
+     exposure:
+      include: '*'
