@@ -2,5 +2,8 @@
 applications:
 - name: simple
   path: target/simple-0.0.1-SNAPSHOT.jar
-  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  buildpack: java_buildpack_offline
   memory: 1G
+  services:
+   - simple
+   - metrics-forwarder-dev

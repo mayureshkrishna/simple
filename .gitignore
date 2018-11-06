@@ -2,6 +2,8 @@
 !.mvn/wrapper/maven-wrapper.jar
 debug
 simple.log
+ci/credentials.yml
+data/
 .DS_store
 ### STS ###
 .apt_generated

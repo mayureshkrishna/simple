@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple
+  labels:
+    app: simple
+    tier: frontend
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+  selector:
+    app: simple
+    tier: frontend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple
+  labels:
+    app: simple
+    tier: frontend
+spec:
+  selector:
+    matchLabels:
+      app: simple
+      tier: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: simple
+        tier: frontend
+    spec:
+      containers:
+      - name: simple
+        image: mayureshkrishna/simple:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 80
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: simple
+  labels:
+    app: simple
+    tier: frontend
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: simple
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 50
