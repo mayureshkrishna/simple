@@ -6,7 +6,7 @@ metadata:
     app: simple
     tier: frontend
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 8080
   selector:

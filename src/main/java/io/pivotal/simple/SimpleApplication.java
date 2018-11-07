@@ -37,7 +37,7 @@ public class SimpleApplication {
 		
 			   
 		return pcf;*/
-		return "Great Platform to run your Cloud Native Apps";
+		return "Great Platform to run your Cloud Native Apps - GREEN";
 	}
 	
 	

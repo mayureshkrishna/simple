@@ -5,5 +5,5 @@ applications:
   buildpack: java_buildpack_offline
   memory: 1G
   services:
-   - simple
+   - snyk-dev
    - metrics-forwarder-dev

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-blue
+  labels:
+    app: simple-blue
+    tier: frontend
+spec:
+  selector:
+    matchLabels:
+      app: simple-blue
+      tier: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: simple-blue
+        tier: frontend
+    spec:
+      containers:
+      - name: simple-blue
+        image: mayureshkrishna/simple:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 80
