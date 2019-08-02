@@ -1,0 +1,9 @@
+apiVersion: apps.pivotal.io/v1beta1
+kind: Sink
+metadata:
+   name: splunk-log
+   namespace: default
+spec:
+   type: syslog
+   host: splunk.lab.dc.amdtron.com
+   port: 514
