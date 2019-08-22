@@ -45,7 +45,7 @@ public class SimpleApplication {
 	public String getKube()
 	{
 		logger.info("Container Platform to run Packaged or Legacy Apps");
-		return "Container Platform to run Packaged or Legacy Apps";
+		return "Container Platform to run Nielsen Apps";
 	}
 
 }
